@@ -43,6 +43,24 @@ The application allows users to review case types, statuses, processing days and
 - 2,125 simulated RTV cases
 - Potential return values calculated from return quantities and unit prices
 
+## Data Preparation
+
+The `prepare_data.py` script prepares the transaction data before it is used by the web application.
+
+It performs the following steps:
+
+- Reads the original Excel transaction data
+- Identifies potential return-related records
+- Fills missing product and customer information
+- Calculates return quantities and potential return values
+- Creates Case IDs and case-related fields
+- Saves the cleaned data as a CSV file
+- Stores the case data in a SQLite database
+- Runs SQL queries to summarise case statuses and case types
+
+The full data preparation code is available in
+[prepare_data.py](./prepare_data.py).
+
 ## Data Note
 The original public dataset did not contain confirmed RMA or RTV information.
 Therefore, the RMA/RTV case types, statuses, priorities and processing days were simulated for this prototype.
